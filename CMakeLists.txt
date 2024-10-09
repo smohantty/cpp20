@@ -12,6 +12,14 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 
+# Fetch third-party libraries if you need to build as a static library and link against it.
+#add_subdirectory(external/stdexec)
+#target_link_libraries(cpp20test PRIVATE STDEXEC::stdexec)
+
+# Add include directories (for header-only library)
+include_directories(${PROJECT_SOURCE_DIR}/external/stdexec/include)
+
 
 # Add the executable target
 add_executable(cpp20test src/cpp20test.cpp)
+
